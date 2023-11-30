@@ -6,24 +6,18 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Main",
-            "request": "launch",
-            "mainClass": "Main",
-            "projectName": "projeto-integrador_a078f2ad"
-        },
-        {
-            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
         },
         {
             "type": "java",
-            "name": "Main",
+            "name": "App",
             "request": "launch",
-            "mainClass": "Main",
-            "projectName": "PJI_d344b8a9",
+            "mainClass": "App",
+            "projectName": "PJI_4c672d",
             "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-21/lib\" --add-modules javafx.controls,javafx.fxml"
+
         }
     ]
 }
