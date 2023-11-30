@@ -6,14 +6,14 @@ import javafx.stage.Stage;
 
 public class App extends Application{
     public void start(Stage primaryStage) throws Exception {
-        String caminhoFXML = "tela.fxml";
+        String caminhoFXML = "registro.fxml";
         System.out.println(getClass().getResource(caminhoFXML));
 
         FXMLLoader fxmloader = new FXMLLoader(getClass().getResource(caminhoFXML));
         Parent root = fxmloader.load();
         Scene tela = new Scene(root);
 
-        primaryStage.setTitle("Telinha");
+        primaryStage.setTitle("Tela de Cadastro");
         primaryStage.setScene(tela);
         primaryStage.show();
     }

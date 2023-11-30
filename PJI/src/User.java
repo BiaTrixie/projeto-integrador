@@ -1,4 +1,3 @@
-
 public class User {
 
     private String nome;
@@ -29,4 +28,3 @@ public class User {
         this.senha = senha;
     }
 }
-

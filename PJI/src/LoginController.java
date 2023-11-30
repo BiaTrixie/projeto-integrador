@@ -1,6 +1,3 @@
-
-
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -31,15 +28,15 @@ public class LoginController {
     void fazerLogin(ActionEvent event) {
         String usuario = txUsuario.getText();
         String senha = txSenha.getText();
-
+    
         try {
-            User user = ClienteDao.buscarUsuario(usuario, senha);
-
-            if (user != null && user.validarCredenciais(usuario, senha)) {
+            Cliente cliente = ClienteDao.buscarCliente(usuario, senha);
+    
+            if (cliente != null && cliente.validarCredenciais(usuario, senha)) {
                 mostrarAlerta(Alert.AlertType.INFORMATION, "Login bem-sucedido", "Bem-vindo, " + usuario + "!");
                 abrirTelaInicial(event);
             } else {
-                mostrarAlerta(Alert.AlertType.ERROR, "Erro de login", "Usuário não encontrado. Verifique suas credenciais.");
+                mostrarAlerta(Alert.AlertType.ERROR, "Erro de login", "Cliente não encontrado. Verifique suas credenciais.");
             }
         } catch (SQLException | IOException e) {
             e.printStackTrace();
@@ -47,7 +44,7 @@ public class LoginController {
     }
 
     private void abrirTelaInicial(ActionEvent event) throws IOException {
-        FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("inicial.fxml"));
+        FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("painel.fxml"));
         Parent root = fxmloader.load();
         Scene telaInicial = new Scene(root);
 
