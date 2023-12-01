@@ -1,3 +1,4 @@
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -64,7 +65,6 @@ public class RegistroController {
 
         if (sucesso) {
             exibirAlerta("Registro bem-sucedido", "O registro foi salvo com sucesso no banco de dados!");
-            // Redirecionar para a tela.fxml
             abrirTelaLogin(event);
         } else {
             exibirAlerta("Erro no registro", "Erro ao salvar o registro no banco de dados.");
@@ -94,7 +94,6 @@ public class RegistroController {
             novaJanela.show();
         } catch (IOException e) {
             e.printStackTrace();
-            // Adicione lógica para lidar com exceções, se necessário
         }
     }
 }

@@ -73,17 +73,17 @@
             <Font name="Poppins SemiBold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lbFaturamento" layoutX="14.0" layoutY="226.0" onDragDetected="#faturamento" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Faturamento" textFill="WHITE">
+      <Label fx:id="lbFaturamento" layoutX="14.0" layoutY="226.0" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Faturamento" textFill="WHITE">
          <font>
             <Font name="Poppins SemiBold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lbConfig" layoutX="14.0" layoutY="252.0" onDragDetected="#configuracao" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Configurações" textFill="WHITE">
+      <Label fx:id="lbConfig" layoutX="14.0" layoutY="252.0" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Configurações" textFill="WHITE">
          <font>
             <Font name="Poppins SemiBold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lbConta" layoutX="14.0" layoutY="278.0" onDragDetected="#conta" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Conta" textFill="WHITE">
+      <Label fx:id="lbConta" layoutX="14.0" layoutY="278.0" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Conta" textFill="WHITE">
          <font>
             <Font name="Poppins SemiBold" size="14.0" />
          </font>

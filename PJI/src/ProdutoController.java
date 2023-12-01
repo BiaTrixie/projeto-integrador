@@ -1,3 +1,4 @@
+
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -14,6 +15,9 @@ public class ProdutoController {
 
     @FXML
     private Button btnPainel;
+
+    @FXML
+    private Label lbnome;
 
     @FXML
     private Label lbCadastroProd;
@@ -52,8 +56,11 @@ public class ProdutoController {
     private TextField txValorRev;
 
     @FXML
+    private Cliente clienteLogado;  
+
+    @FXML
     void telaPainel(ActionEvent event) {
-         abrirTelaProduto(event);
+         abrirTelaPainel(event);
     }
 
     @FXML
@@ -61,7 +68,7 @@ public class ProdutoController {
 
     }
 
-       private void abrirTelaProduto(ActionEvent event) {
+       private void abrirTelaPainel(ActionEvent event) {
         try {
             FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("painel.fxml"));
             Parent root = fxmloader.load();
@@ -77,6 +84,11 @@ public class ProdutoController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void setClienteLogado(Cliente cliente) {
+        this.clienteLogado = cliente;
+        lbnome.setText(cliente.getUsuario());
     }
 
 }

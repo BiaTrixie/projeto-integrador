@@ -1,7 +1,13 @@
+
+import java.io.IOException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class PainelController {
 
@@ -38,56 +44,104 @@ public class PainelController {
     @FXML
     private Label lbnome;
 
-    private Cliente clienteLogado;  // Adicione esta linha
+    @FXML
+    private Cliente clienteLogado;  
+
+    
 
     @FXML
-    void GetEmail(MouseEvent event) {
-
+    void telaConta(ActionEvent event) {
+        abrirTelaConta(event);
     }
 
     @FXML
-    void GetNome(MouseEvent event) {
-
+    void telaFaturamento(ActionEvent event) {
+        abrirTelaFaturamento(event); 
     }
 
     @FXML
-    void configuracao(MouseEvent event) {
-
-    }
-
-    @FXML
-    void conta(MouseEvent event) {
-
-    }
-
-    @FXML
-    void faturamento(MouseEvent event) {
-
-    }
-
-    @FXML
-    void telaConfig(MouseEvent event) {
-
-    }
-
-    @FXML
-    void telaConta(MouseEvent event) {
-
-    }
-
-    @FXML
-    void telaFaturamento(MouseEvent event) {
-
-    }
-
-    @FXML
-    void telaProduto(MouseEvent event) {
+    void telaProduto(ActionEvent event) {
         abrirTelaProduto(event);
     }
 
-    private void abrirTelaProduto(MouseEvent event) {
+    @FXML
+    void telaConfig(ActionEvent event) {
+        abrirConfigurações(event);
     }
 
+     private void abrirConfigurações(ActionEvent event) {
+             try {
+            FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("configurções.fxml"));
+            Parent root = fxmloader.load();
+            Scene telaInicial = new Scene(root);
+
+            Stage stage = (Stage) btnProd.getScene().getWindow();
+            stage.close();
+
+            Stage novaJanela = new Stage();
+            novaJanela.setTitle("Tela de Configuração");
+            novaJanela.setScene(telaInicial);
+            novaJanela.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+ private void abrirTelaFaturamento(ActionEvent event) {
+             try {
+            FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("faturamento.fxml"));
+            Parent root = fxmloader.load();
+            Scene telaInicial = new Scene(root);
+
+            Stage stage = (Stage) btnProd.getScene().getWindow();
+            stage.close();
+
+            Stage novaJanela = new Stage();
+            novaJanela.setTitle("Tela de Faturamento");
+            novaJanela.setScene(telaInicial);
+            novaJanela.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void abrirTelaProduto(ActionEvent event) {
+             try {
+            FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("produto.fxml"));
+            Parent root = fxmloader.load();
+            Scene telaInicial = new Scene(root);
+
+            Stage stage = (Stage) btnProd.getScene().getWindow();
+            stage.close();
+
+            Stage novaJanela = new Stage();
+            novaJanela.setTitle("Tela de Cadastro de produto");
+            novaJanela.setScene(telaInicial);
+            novaJanela.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+   private void abrirTelaConta(ActionEvent event) {
+             try {
+            FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("conta.fxml"));
+            Parent root = fxmloader.load();
+            Scene telaInicial = new Scene(root);
+
+                
+
+            Stage stage = (Stage) btnProd.getScene().getWindow();
+            stage.close();
+
+            Stage novaJanela = new Stage();
+            novaJanela.setTitle("Conta");
+            novaJanela.setScene(telaInicial);
+            novaJanela.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void setClienteLogado(Cliente cliente) {
         this.clienteLogado = cliente;
         lbnome.setText(cliente.getUsuario());
