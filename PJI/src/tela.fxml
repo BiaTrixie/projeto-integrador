@@ -18,7 +18,7 @@
       <children>
             <ImageView fitHeight="400.0" fitWidth="640.0" pickOnBounds="true">
                <image>
-                  <Image url="@../../../ps/fundo%20pji.png" />
+                  <Image url="@images/fundo%20pji.png" />
                </image>
             </ImageView>
             <Pane layoutX="178.0" layoutY="36.0" prefHeight="321.0" prefWidth="282.0" style="-fx-background-color: white; -fx-background-radius: 30px;">

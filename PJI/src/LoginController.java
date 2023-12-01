@@ -11,8 +11,6 @@ import javafx.fxml.FXMLLoader;
 import java.io.IOException;
 import java.sql.SQLException;
 
-
-
 public class LoginController {
 
     @FXML
@@ -28,13 +26,13 @@ public class LoginController {
     void fazerLogin(ActionEvent event) {
         String usuario = txUsuario.getText();
         String senha = txSenha.getText();
-    
+
         try {
             Cliente cliente = ClienteDao.buscarCliente(usuario, senha);
-    
+
             if (cliente != null && cliente.validarCredenciais(usuario, senha)) {
                 mostrarAlerta(Alert.AlertType.INFORMATION, "Login bem-sucedido", "Bem-vindo, " + usuario + "!");
-                abrirTelaInicial(event);
+                abrirTelaInicial(cliente);
             } else {
                 mostrarAlerta(Alert.AlertType.ERROR, "Erro de login", "Cliente não encontrado. Verifique suas credenciais.");
             }
@@ -43,9 +41,16 @@ public class LoginController {
         }
     }
 
-    private void abrirTelaInicial(ActionEvent event) throws IOException {
+    private void abrirTelaInicial(Cliente cliente) throws IOException {
         FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("painel.fxml"));
         Parent root = fxmloader.load();
+
+        // Obtenha o controlador da tela inicial
+        PainelController painelController = fxmloader.getController();
+        
+        // Passe o cliente para o controlador da tela inicial
+        painelController.setClienteLogado(cliente);
+
         Scene telaInicial = new Scene(root);
 
         Stage stage = (Stage) btnEntrar.getScene().getWindow();

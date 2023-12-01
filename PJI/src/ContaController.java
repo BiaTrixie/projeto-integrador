@@ -1,9 +1,10 @@
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
-public class PainelController {
+public class ContaController {
 
     @FXML
     private Button btnConfig;
@@ -38,18 +39,6 @@ public class PainelController {
     @FXML
     private Label lbnome;
 
-    private Cliente clienteLogado;  // Adicione esta linha
-
-    @FXML
-    void GetEmail(MouseEvent event) {
-
-    }
-
-    @FXML
-    void GetNome(MouseEvent event) {
-
-    }
-
     @FXML
     void configuracao(MouseEvent event) {
 
@@ -66,30 +55,25 @@ public class PainelController {
     }
 
     @FXML
-    void telaConfig(MouseEvent event) {
+    void telaConfig(ActionEvent event) {
 
     }
 
     @FXML
-    void telaConta(MouseEvent event) {
+    void telaConta(ActionEvent event) {
 
     }
 
     @FXML
-    void telaFaturamento(MouseEvent event) {
+    void telaFaturamento(ActionEvent event) {
 
     }
 
     @FXML
-    void telaProduto(MouseEvent event) {
-        abrirTelaProduto(event);
-    }
+    void telaProduto(ActionEvent event) {
 
-    private void abrirTelaProduto(MouseEvent event) {
     }
+ 
+    
 
-    public void setClienteLogado(Cliente cliente) {
-        this.clienteLogado = cliente;
-        lbnome.setText(cliente.getUsuario());
-    }
 }

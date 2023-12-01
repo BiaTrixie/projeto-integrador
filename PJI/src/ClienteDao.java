@@ -39,6 +39,36 @@ public class ClienteDao {
         }
     }
     
+    public Cliente obterClientePorUsuario(String usuario) {
+        String sql = "SELECT * FROM tabela_clientes WHERE usuario = ?";
+        
+        try (Connection connection = obterConexao();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+    
+            preparedStatement.setString(1, usuario);
+    
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    return new Cliente(
+                        resultSet.getString("cnpj"),
+                        resultSet.getString("email"),
+                        resultSet.getString("nome_completo"),
+                        resultSet.getString("senha"),
+                        resultSet.getString("usuario")
+                    );
+                } else {
+                    System.out.println("Cliente não encontrado para o usuário: " + usuario);
+                    return null; 
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
+    
+    
 
     public boolean salvarCliente(Cliente cliente) {
         String sql = "INSERT INTO tabela_clientes (cnpj, email, nome_completo, senha, usuario) VALUES (?, ?, ?, ?, ?)";
