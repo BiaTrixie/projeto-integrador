@@ -12,61 +12,21 @@
    <children>
       <Pane layoutX="149.0" layoutY="9.0" prefHeight="382.0" prefWidth="442.0" style="-fx-background-color: #fff; -fx-background-radius: 30;">
          <children>
-            <Label layoutX="171.0" layoutY="127.0" text="Nome" textFill="#303ed7">
+            <Label layoutX="24.0" layoutY="19.0" prefHeight="35.0" prefWidth="184.0" text="Faturamento" textFill="#303ed7">
                <font>
-                  <Font name="Poppins SemiBold" size="16.0" />
+                  <Font name="Poppins SemiBold" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="171.0" layoutY="37.0" text="Usuario" textFill="#303ed7">
-               <font>
-                  <Font name="Poppins SemiBold" size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="294.0" layoutY="37.0" text="Email" textFill="#303ed7">
-               <font>
-                  <Font name="Poppins SemiBold" size="16.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="122.0" fitWidth="126.0" layoutX="21.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="374.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/user%20preto%20pji.png" />
+                  <Image url="@images/simbolo-do-dolar.png" />
                </image>
             </ImageView>
-            <Label layoutX="18.0" layoutY="157.0" text="Trocar imagem" textFill="#303ed7">
-               <font>
-                  <Font name="Poppins SemiBold" size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="295.0" layoutY="127.0" text="CNPJ" textFill="#303ed7">
-               <font>
-                  <Font name="Poppins SemiBold" size="16.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="122.0" fitWidth="418.0" layoutX="10.0" layoutY="232.0" pickOnBounds="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="133.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/2208.i203.047.S.m004.c13.restaurant%20bar%20cafe%20furniture%20interior%20cartoon.jpg" />
+                  <Image url="@images/carregando.png" />
                </image>
             </ImageView>
-            <Label layoutX="171.0" layoutY="66.0" text="Usuario" textFill="#303ed7">
-               <font>
-                  <Font name="Poppins SemiBold" size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="294.0" layoutY="66.0" text="Usuario" textFill="#303ed7">
-               <font>
-                  <Font name="Poppins SemiBold" size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="171.0" layoutY="157.0" text="Nome" textFill="#303ed7">
-               <font>
-                  <Font name="Poppins SemiBold" size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="295.0" layoutY="157.0" text="CNPJ" textFill="#303ed7">
-               <font>
-                  <Font name="Poppins SemiBold" size="16.0" />
-               </font>
-            </Label>
          </children>
       </Pane>
       <ImageView fitHeight="78.0" fitWidth="68.0" layoutX="20.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
@@ -94,7 +54,7 @@
             <Font name="Poppins SemiBold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lbFaturamento" layoutX="14.0" layoutY="226.0" onDragDetected="#faturamento" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Faturamento" textFill="WHITE">
+      <Label fx:id="lbFaturamento" layoutX="14.0" layoutY="226.0" onDragDetected="#faturamento" prefHeight="25.0" prefWidth="130.0" text="Faturamento" textFill="WHITE">
          <font>
             <Font name="Poppins SemiBold" size="14.0" />
          </font>
@@ -104,7 +64,7 @@
             <Font name="Poppins SemiBold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lbConta" layoutX="14.0" layoutY="278.0" onDragDetected="#conta" prefHeight="25.0" prefWidth="130.0" text="Conta" textFill="WHITE">
+      <Label fx:id="lbConta" layoutX="14.0" layoutY="278.0" onDragDetected="#conta" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Conta" textFill="WHITE">
          <font>
             <Font name="Poppins SemiBold" size="14.0" />
          </font>
