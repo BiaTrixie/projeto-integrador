@@ -12,17 +12,17 @@
    <children>
       <Pane layoutX="149.0" layoutY="9.0" prefHeight="382.0" prefWidth="442.0" style="-fx-background-color: #fff; -fx-background-radius: 30;">
          <children>
-            <Label layoutX="171.0" layoutY="127.0" text="Nome" textFill="#303ed7">
+            <Label layoutX="171.0" layoutY="26.0" text="Nome" textFill="#303ed7">
                <font>
                   <Font name="Poppins SemiBold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="171.0" layoutY="37.0" text="Usuario" textFill="#303ed7">
+            <Label layoutX="171.0" layoutY="72.0" text="Usuario" textFill="#303ed7">
                <font>
                   <Font name="Poppins SemiBold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="294.0" layoutY="37.0" text="Email" textFill="#303ed7">
+            <Label layoutX="172.0" layoutY="121.0" text="Email" textFill="#303ed7">
                <font>
                   <Font name="Poppins SemiBold" size="16.0" />
                </font>
@@ -37,7 +37,7 @@
                   <Font name="Poppins SemiBold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="295.0" layoutY="127.0" text="CNPJ" textFill="#303ed7">
+            <Label layoutX="171.0" layoutY="169.0" text="CNPJ" textFill="#303ed7">
                <font>
                   <Font name="Poppins SemiBold" size="16.0" />
                </font>
@@ -47,22 +47,22 @@
                   <Image url="@images/2208.i203.047.S.m004.c13.restaurant%20bar%20cafe%20furniture%20interior%20cartoon.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="171.0" layoutY="66.0" text="Usuario" textFill="#303ed7">
+            <Label fx:id="userID" layoutX="262.0" layoutY="72.0" text="Usuario" textFill="#303ed7">
                <font>
                   <Font name="Poppins SemiBold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="294.0" layoutY="66.0" text="Usuario" textFill="#303ed7">
+            <Label fx:id="emailID" layoutX="262.0" layoutY="121.0" text="Email" textFill="#303ed7">
                <font>
                   <Font name="Poppins SemiBold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="171.0" layoutY="157.0" text="Nome" textFill="#303ed7">
+            <Label fx:id="nameID" layoutX="261.0" layoutY="26.0" text="Nome" textFill="#303ed7">
                <font>
                   <Font name="Poppins SemiBold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="295.0" layoutY="157.0" text="CNPJ" textFill="#303ed7">
+            <Label fx:id="cnpjID" layoutX="264.0" layoutY="169.0" text="CNPJ" textFill="#303ed7">
                <font>
                   <Font name="Poppins SemiBold" size="16.0" />
                </font>

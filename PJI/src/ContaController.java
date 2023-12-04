@@ -51,6 +51,18 @@ public class ContaController {
     private Label lbnome;
 
     @FXML
+    private Label cnpjID;
+
+    @FXML
+    private Label emailID;
+
+    @FXML
+    private Label nameID;
+
+    @FXML
+    private Label userID;
+
+    @FXML
     void telaConfig(ActionEvent event) {
         abrirTelaConfig(event);
     }
@@ -151,7 +163,6 @@ public class ContaController {
         }
     }
 
-
     public ContaController() {
         this.clienteDao = new ClienteDao();
     }
@@ -192,9 +203,29 @@ public class ContaController {
         if (usuario != null) {
             lbnome.setText(usuario);
     
-            // Agora pegamos o e-mail diretamente do ApplicationContext
-            String email = ApplicationContext.getEmailLogado();
-            lbemail.setText(email);
+            try {
+                // Use o ClienteDao para obter informações adicionais do cliente
+                Cliente cliente = clienteDao.obterClienteCompletoPorUsuario(usuario);
+    
+                if (cliente != null) {
+                    String email = cliente.getEmail();
+                    String nome = cliente.getNomeCompleto();
+                    String cnpj = cliente.getCnpj();
+                    String user = cliente.getUsuario();
+    
+                    userID.setText(user);
+                    emailID.setText(email);
+                    lbemail.setText(email);
+                    nameID.setText(nome);
+                    cnpjID.setText(cnpj);
+                } else {
+                    System.out.println("Cliente não encontrado para o usuário: " + usuario);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
+    
+
 }

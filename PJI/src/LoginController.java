@@ -33,9 +33,9 @@ public class LoginController {
 
             if (cliente != null && cliente.validarCredenciais(usuario, senha)) {
                 mostrarAlerta(Alert.AlertType.INFORMATION, "Login bem-sucedido", "Bem-vindo, " + usuario + "!");
-                abrirTelaInicial(cliente);
                 String email = cliente.getEmail();
                 ApplicationContext.setUsuarioLogado(usuario, email);
+                abrirTelaInicial(cliente);
             } else {
                 mostrarAlerta(Alert.AlertType.ERROR, "Erro de login",
                         "Cliente não encontrado. Verifique suas credenciais.");
