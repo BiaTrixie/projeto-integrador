@@ -54,7 +54,6 @@ public class RegistroController {
             return;
         }
 
-        // Verificar se o usuário já está registrado
         if (clienteDao.clienteExistente(usuario)) {
             exibirAlerta("Usuário já registrado", "O usuário já está registrado. Escolha outro nome de usuário.");
             return;
@@ -81,7 +80,7 @@ public class RegistroController {
 
     private void abrirTelaLogin(ActionEvent event) {
         try {
-            FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("tela.fxml"));
+            FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("login.fxml"));
             Parent root = fxmloader.load();
             Scene telaInicial = new Scene(root);
 

@@ -113,6 +113,6 @@
       <Button fx:id="btnFaturamento" layoutX="14.0" layoutY="225.0" mnemonicParsing="false" onAction="#telaFaturamento" opacity="0.0" prefHeight="26.0" prefWidth="122.0" text="Faturamento" />
       <Button fx:id="btnConfig" layoutX="14.0" layoutY="251.0" mnemonicParsing="false" onAction="#telaConfig" opacity="0.0" prefHeight="26.0" prefWidth="122.0" text="config" />
       <Button fx:id="btnConta" layoutX="14.0" layoutY="277.0" mnemonicParsing="false" onAction="#telaConta" opacity="0.0" prefHeight="26.0" prefWidth="122.0" text="conta" />
-      <Button fx:id="btnProd1" layoutX="14.0" layoutY="172.0" mnemonicParsing="false" onAction="#telaPainel" opacity="0.0" prefHeight="26.0" prefWidth="122.0" text="Cadastro prod" />
+      <Button fx:id="btnPainel" layoutX="14.0" layoutY="172.0" mnemonicParsing="false" onAction="#telaPainel" opacity="0.0" prefHeight="26.0" prefWidth="122.0" text="Cadastro prod" />
    </children>
 </AnchorPane>

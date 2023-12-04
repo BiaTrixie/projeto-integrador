@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #303ed7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PainelController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #303ed7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="configController">
    <children>
       <Pane layoutX="149.0" layoutY="9.0" prefHeight="382.0" prefWidth="442.0" style="-fx-background-color: #fff; -fx-background-radius: 30;">
          <children>
@@ -22,6 +22,11 @@
                   <Font name="Poppins SemiBold" size="18.0" />
                </font>
             </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="121.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/carregando.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <ImageView fitHeight="78.0" fitWidth="68.0" layoutX="20.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
@@ -49,24 +54,24 @@
             <Font name="Poppins SemiBold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lbFaturamento" layoutX="14.0" layoutY="226.0" onDragDetected="#faturamento" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Faturamento" textFill="WHITE">
+      <Label fx:id="lbFaturamento" layoutX="14.0" layoutY="226.0" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Faturamento" textFill="WHITE">
          <font>
             <Font name="Poppins SemiBold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lbConfig" layoutX="14.0" layoutY="252.0" onDragDetected="#configuracao" prefHeight="25.0" prefWidth="130.0" text="Configurações" textFill="WHITE">
+      <Label fx:id="lbConfig" layoutX="14.0" layoutY="252.0" prefHeight="25.0" prefWidth="130.0" text="Configurações" textFill="WHITE">
          <font>
             <Font name="Poppins SemiBold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lbConta" layoutX="14.0" layoutY="278.0" onDragDetected="#conta" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Conta" textFill="WHITE">
+      <Label fx:id="lbConta" layoutX="14.0" layoutY="278.0" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Conta" textFill="WHITE">
          <font>
             <Font name="Poppins SemiBold" size="14.0" />
          </font>
       </Label>
       <Button fx:id="btnProd" layoutX="14.0" layoutY="199.0" mnemonicParsing="false" onAction="#telaProduto" opacity="0.0" prefHeight="26.0" prefWidth="122.0" text="Cadastro prod" />
       <Button fx:id="btnFaturamento" layoutX="14.0" layoutY="225.0" mnemonicParsing="false" onAction="#telaFaturamento" opacity="0.0" prefHeight="26.0" prefWidth="122.0" text="Faturamento" />
-      <Button fx:id="btnConfig" layoutX="14.0" layoutY="251.0" mnemonicParsing="false" onAction="#telaConfig" opacity="0.0" prefHeight="26.0" prefWidth="122.0" text="config" />
+      <Button fx:id="btnPainel" layoutX="14.0" layoutY="172.0" mnemonicParsing="false" onAction="#telaPainel" opacity="0.0" prefHeight="26.0" prefWidth="122.0" text="Painel" />
       <Button fx:id="btnConta" layoutX="14.0" layoutY="277.0" mnemonicParsing="false" onAction="#telaConta" opacity="0.0" prefHeight="26.0" prefWidth="122.0" text="conta" />
    </children>
 </AnchorPane>

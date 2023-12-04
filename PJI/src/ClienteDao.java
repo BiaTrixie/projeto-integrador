@@ -17,49 +17,69 @@ public class ClienteDao {
 
     public static Cliente buscarCliente(String usuario, String senha) throws SQLException {
         String sql = "SELECT * FROM tabela_clientes WHERE usuario = ? AND senha = ?";
-        
+
         try (Connection connection = obterConexao();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-    
+
             preparedStatement.setString(1, usuario);
             preparedStatement.setString(2, senha);
-    
+
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     return new Cliente(
-                        resultSet.getString("cnpj"),
-                        resultSet.getString("email"),
-                        resultSet.getString("nome_completo"),
-                        resultSet.getString("senha"),
-                        resultSet.getString("usuario")
+                            resultSet.getString("cnpj"),
+                            resultSet.getString("email"),
+                            resultSet.getString("nome_completo"),
+                            resultSet.getString("senha"),
+                            resultSet.getString("usuario")
                     );
                 } else {
-                    return null; 
+                    System.out.println("Cliente não encontrado para o usuário: " + usuario);
+                    return null;
                 }
             }
         }
     }
     
-    public Cliente obterClientePorUsuario(String usuario) {
-        String sql = "SELECT * FROM tabela_clientes WHERE usuario = ?";
-        
+    public String obterEmailPorUsuario(String usuario) throws SQLException {
+        String sql = "SELECT email FROM tabela_clientes WHERE usuario = ?";
+
         try (Connection connection = obterConexao();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-    
+
             preparedStatement.setString(1, usuario);
-    
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    return resultSet.getString("email");
+                } else {
+                    System.out.println("E-mail não encontrado para o usuário: " + usuario);
+                    return null;
+                }
+            }
+        }
+    }
+
+    public Cliente obterClienteCompletoPorUsuario(String usuario) {
+        String sql = "SELECT * FROM tabela_clientes WHERE usuario = ?";
+        System.out.println("Buscando cliente para o usuário: " + usuario);
+        try (Connection connection = obterConexao();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setString(1, usuario);
+
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     return new Cliente(
-                        resultSet.getString("cnpj"),
-                        resultSet.getString("email"),
-                        resultSet.getString("nome_completo"),
-                        resultSet.getString("senha"),
-                        resultSet.getString("usuario")
+                            resultSet.getString("cnpj"),
+                            resultSet.getString("email"),
+                            resultSet.getString("nome_completo"),
+                            resultSet.getString("senha"),
+                            resultSet.getString("usuario")
                     );
                 } else {
                     System.out.println("Cliente não encontrado para o usuário: " + usuario);
-                    return null; 
+                    return null;
                 }
             }
         } catch (SQLException e) {

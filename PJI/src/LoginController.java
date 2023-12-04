@@ -34,8 +34,11 @@ public class LoginController {
             if (cliente != null && cliente.validarCredenciais(usuario, senha)) {
                 mostrarAlerta(Alert.AlertType.INFORMATION, "Login bem-sucedido", "Bem-vindo, " + usuario + "!");
                 abrirTelaInicial(cliente);
+                String email = cliente.getEmail();
+                ApplicationContext.setUsuarioLogado(usuario, email);
             } else {
-                mostrarAlerta(Alert.AlertType.ERROR, "Erro de login", "Cliente não encontrado. Verifique suas credenciais.");
+                mostrarAlerta(Alert.AlertType.ERROR, "Erro de login",
+                        "Cliente não encontrado. Verifique suas credenciais.");
             }
         } catch (SQLException | IOException e) {
             e.printStackTrace();
@@ -43,25 +46,27 @@ public class LoginController {
     }
 
     private void abrirTelaInicial(Cliente cliente) throws IOException {
-        FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("painel.fxml"));
-        Parent root = fxmloader.load();
-
-        // Obtenha o controlador da tela inicial
-        PainelController painelController = fxmloader.getController();
-        
-        // Passe o cliente para o controlador da tela inicial
-        painelController.setClienteLogado(cliente);
-
-        Scene telaInicial = new Scene(root);
-
-        Stage stage = (Stage) btnEntrar.getScene().getWindow();
-        stage.close();
-
-        Stage novaJanela = new Stage();
-        novaJanela.setTitle("Tela Inicial");
-        novaJanela.setScene(telaInicial);
-        novaJanela.show();
+        String usuario = ApplicationContext.getUsuarioLogado();
+    
+        if (usuario != null) {
+            FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("painel.fxml"));
+            Parent root = fxmloader.load();
+    
+            PainelController painelController = fxmloader.getController();
+            painelController.setUsuarioLogado(usuario);
+    
+            Scene telaInicial = new Scene(root);
+    
+            Stage stage = (Stage) btnEntrar.getScene().getWindow();
+            stage.close();
+    
+            Stage novaJanela = new Stage();
+            novaJanela.setTitle("Tela Inicial");
+            novaJanela.setScene(telaInicial);
+            novaJanela.show();
+        }
     }
+    
 
     private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensagem) {
         Alert alerta = new Alert(tipo);
