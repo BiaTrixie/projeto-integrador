@@ -1,13 +1,27 @@
+
 import java.io.IOException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class PainelController {
+
+    @FXML
+    private Button btnConfig;
+
+    @FXML
+    private Button btnConta;
+
+    @FXML
+    private Button btnFaturamento;
+
+    @FXML
+    private Button btnProd;
 
     @FXML
     private Label lbCadastroProd;
@@ -31,65 +45,41 @@ public class PainelController {
     private Label lbnome;
 
     @FXML
-    void GetEmail(MouseEvent event) {
+    private Cliente clienteLogado;  
 
+    
+
+    @FXML
+    void telaConta(ActionEvent event) {
+        abrirTelaConta(event);
     }
 
     @FXML
-    void GetNome(MouseEvent event) {
-
+    void telaFaturamento(ActionEvent event) {
+        abrirTelaFaturamento(event); 
     }
 
     @FXML
-    void cadastroProduto(MouseEvent event) {
-        clickprod(event);
-        abrirCadastroProduto(event);
+    void telaProduto(ActionEvent event) {
+        abrirTelaProduto(event);
     }
 
     @FXML
-    void configuracao(MouseEvent event) {
-
+    void telaConfig(ActionEvent event) {
+        abrirConfigurações(event);
     }
 
-    @FXML
-    void conta(MouseEvent event) {
-
-    }
-
-    @FXML
-    void clickprod(MouseEvent event)  {
-        try {
-            FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("produto.fxml"));
+     private void abrirConfigurações(ActionEvent event) {
+             try {
+            FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("configurções.fxml"));
             Parent root = fxmloader.load();
             Scene telaInicial = new Scene(root);
 
-            Stage stage = (Stage) lbCadastroProd.getScene().getWindow();
+            Stage stage = (Stage) btnProd.getScene().getWindow();
             stage.close();
 
             Stage novaJanela = new Stage();
-            novaJanela.setTitle("Tela de Cadastro de Produto");
-            novaJanela.setScene(telaInicial);
-            novaJanela.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    @FXML
-    void faturamento(MouseEvent event) {
-
-    }
-
-      private void abrirCadastroProduto(MouseEvent event) {
-        try {
-            FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("produto.fxml"));
-            Parent root = fxmloader.load();
-            Scene telaInicial = new Scene(root);
-
-            Stage stage = (Stage) lbCadastroProd.getScene().getWindow();
-            stage.close();
-
-            Stage novaJanela = new Stage();
-            novaJanela.setTitle("Tela de Cadastro de Produto");
+            novaJanela.setTitle("Tela de Configuração");
             novaJanela.setScene(telaInicial);
             novaJanela.show();
         } catch (IOException e) {
@@ -97,4 +87,63 @@ public class PainelController {
         }
     }
 
+ private void abrirTelaFaturamento(ActionEvent event) {
+             try {
+            FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("faturamento.fxml"));
+            Parent root = fxmloader.load();
+            Scene telaInicial = new Scene(root);
+
+            Stage stage = (Stage) btnProd.getScene().getWindow();
+            stage.close();
+
+            Stage novaJanela = new Stage();
+            novaJanela.setTitle("Tela de Faturamento");
+            novaJanela.setScene(telaInicial);
+            novaJanela.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void abrirTelaProduto(ActionEvent event) {
+             try {
+            FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("produto.fxml"));
+            Parent root = fxmloader.load();
+            Scene telaInicial = new Scene(root);
+
+            Stage stage = (Stage) btnProd.getScene().getWindow();
+            stage.close();
+
+            Stage novaJanela = new Stage();
+            novaJanela.setTitle("Tela de Cadastro de produto");
+            novaJanela.setScene(telaInicial);
+            novaJanela.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+   private void abrirTelaConta(ActionEvent event) {
+             try {
+            FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("conta.fxml"));
+            Parent root = fxmloader.load();
+            Scene telaInicial = new Scene(root);
+
+                
+
+            Stage stage = (Stage) btnProd.getScene().getWindow();
+            stage.close();
+
+            Stage novaJanela = new Stage();
+            novaJanela.setTitle("Conta");
+            novaJanela.setScene(telaInicial);
+            novaJanela.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void setClienteLogado(Cliente cliente) {
+        this.clienteLogado = cliente;
+        lbnome.setText(cliente.getUsuario());
+    }
 }

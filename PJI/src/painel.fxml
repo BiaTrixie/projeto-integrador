@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -15,14 +16,14 @@
                <children>
                   <ImageView fitHeight="216.0" fitWidth="416.0" layoutY="14.0" pickOnBounds="true">
                      <image>
-                        <Image url="@../../../ps/lucro%20pji.png" />
+                        <Image url="@images/lucro%20pji.png" />
                      </image>
                   </ImageView>
                </children>
             </Pane>
             <ImageView fitHeight="164.0" fitWidth="389.0" layoutX="18.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../ps/meta%20pji.png" />
+                  <Image url="@images/meta%20pji.png" />
                </image>
             </ImageView>
             <Label layoutX="18.0" layoutY="14.0" text="Produtos Vendidos" textFill="#303ed7">
@@ -37,7 +38,7 @@
             </Label>
             <ImageView fitHeight="98.0" fitWidth="179.0" layoutX="222.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../ps/mapa%20pji.png" />
+                  <Image url="@images/mapa%20pji.png" />
                </image>
             </ImageView>
             <Label layoutX="237.0" layoutY="345.0" text="Cidades Alcançadas" textFill="#303ed7">
@@ -49,15 +50,15 @@
       </Pane>
       <ImageView fitHeight="78.0" fitWidth="68.0" layoutX="20.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@user%20pji.png" />
+            <Image url="@images/user%20pji.png" />
          </image>
       </ImageView>
-      <Label fx:id="lbnome" layoutX="14.0" layoutY="99.0" onDragDetected="#GetNome" prefHeight="38.0" prefWidth="130.0" text="Jonathan" textFill="WHITE">
+      <Label fx:id="lbnome" layoutX="14.0" layoutY="99.0" prefHeight="38.0" prefWidth="130.0" text="Jonathan" textFill="WHITE">
          <font>
             <Font name="Poppins SemiBold" size="25.0" />
          </font>
       </Label>
-      <Label fx:id="lbemail" layoutX="14.0" layoutY="128.0" onDragDetected="#GetEmail" prefHeight="38.0" prefWidth="130.0" text="Jonathan@gmail.com" textFill="WHITE">
+      <Label fx:id="lbemail" layoutX="14.0" layoutY="128.0" prefHeight="38.0" prefWidth="130.0" text="Jonathan@gmail.com" textFill="WHITE">
          <font>
             <Font name="Poppins Light" size="10.0" />
          </font>
@@ -67,25 +68,29 @@
             <Font name="Poppins SemiBold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lbCadastroProd" layoutX="14.0" layoutY="200.0" onMouseClicked="#cadastroProduto" onMousePressed="#clickprod" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Cadastras Produto" textFill="WHITE">
+      <Label fx:id="lbCadastroProd" layoutX="14.0" layoutY="200.0" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Cadastrar Produto" textFill="WHITE">
          <font>
             <Font name="Poppins SemiBold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lbFaturamento" layoutX="14.0" layoutY="226.0" onDragDetected="#faturamento" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Faturamento" textFill="WHITE">
+      <Label fx:id="lbFaturamento" layoutX="14.0" layoutY="226.0" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Faturamento" textFill="WHITE">
          <font>
             <Font name="Poppins SemiBold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lbConfig" layoutX="14.0" layoutY="252.0" onDragDetected="#configuracao" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Configurações" textFill="WHITE">
+      <Label fx:id="lbConfig" layoutX="14.0" layoutY="252.0" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Configurações" textFill="WHITE">
          <font>
             <Font name="Poppins SemiBold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lbConta" layoutX="14.0" layoutY="278.0" onDragDetected="#conta" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Conta" textFill="WHITE">
+      <Label fx:id="lbConta" layoutX="14.0" layoutY="278.0" opacity="0.5" prefHeight="25.0" prefWidth="130.0" text="Conta" textFill="WHITE">
          <font>
             <Font name="Poppins SemiBold" size="14.0" />
          </font>
       </Label>
+      <Button fx:id="btnProd" layoutX="14.0" layoutY="199.0" mnemonicParsing="false" onAction="#telaProduto" opacity="0.0" prefHeight="26.0" prefWidth="122.0" text="Cadastro prod" />
+      <Button fx:id="btnFaturamento" layoutX="14.0" layoutY="225.0" mnemonicParsing="false" onAction="#telaFaturamento" opacity="0.0" prefHeight="26.0" prefWidth="122.0" text="Faturamento" />
+      <Button fx:id="btnConfig" layoutX="14.0" layoutY="251.0" mnemonicParsing="false" onAction="#telaConfig" opacity="0.0" prefHeight="26.0" prefWidth="122.0" text="config" />
+      <Button fx:id="btnConta" layoutX="14.0" layoutY="277.0" mnemonicParsing="false" onAction="#telaConta" opacity="0.0" prefHeight="26.0" prefWidth="122.0" text="conta" />
    </children>
 </AnchorPane>
