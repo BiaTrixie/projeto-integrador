@@ -15,6 +15,8 @@ public class ClienteDao {
         return DriverManager.getConnection(URL, USUARIO, SENHA);
     }
 
+
+
     public static Cliente buscarCliente(String usuario, String senha) throws SQLException {
         String sql = "SELECT * FROM tabela_clientes WHERE usuario = ? AND senha = ?";
 
@@ -27,11 +29,12 @@ public class ClienteDao {
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     return new Cliente(
+                        resultSet.getString("usuario"),
                             resultSet.getString("cnpj"),
                             resultSet.getString("email"),
                             resultSet.getString("nome_completo"),
-                            resultSet.getString("senha"),
-                            resultSet.getString("usuario")
+                            resultSet.getString("senha")
+                            
                     );
                 } else {
                     System.out.println("Cliente não encontrado para o usuário: " + usuario);

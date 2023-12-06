@@ -156,7 +156,6 @@ public class PainelController {
         if (usuario != null) {
             lbnome.setText(usuario);
     
-            // Agora pegamos o e-mail diretamente do ApplicationContext
             String email = ApplicationContext.getEmailLogado();
             lbemail.setText(email);
         }

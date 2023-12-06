@@ -204,7 +204,6 @@ public class ContaController {
             lbnome.setText(usuario);
     
             try {
-                // Use o ClienteDao para obter informações adicionais do cliente
                 Cliente cliente = clienteDao.obterClienteCompletoPorUsuario(usuario);
     
                 if (cliente != null) {
